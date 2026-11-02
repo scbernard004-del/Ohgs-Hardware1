@@ -1,0 +1,46 @@
+START WITH START_HERE.txt: identify the Vercel project by your live domain, then use its linked GitHub repository.
+
+OHGS WEBSITE — SIMPLE GITHUB UPLOAD
+
+This package is ready to upload directly to the ROOT of your GitHub repository.
+
+1. Extract OHGS_GITHUB_UPLOAD_READY.zip on your phone or computer.
+2. In the GitHub repository, choose Add file > Upload files.
+3. The easiest method is GitHub Desktop: clone the repository, copy ALL extracted files into its folder, then Commit and Push.
+   If you use the GitHub website, upload no more than 100 files per batch. Upload root files and api first, then media, then the files inside media/responsive in batches. Keep the same folder names.
+4. Do not upload the ZIP itself or the outer extracted folder.
+5. Check that index.html is visible at the repository root, beside products.html.
+6. Commit the files with a message such as: Deploy OHGS v41 automatic video playback.
+
+IMPORTANT CHECKS AFTER DEPLOYMENT:
+- Open /version-check.txt on the deployed domain. It must say v41-visible-video-autoplay.
+- Change the language to Kiswahili and confirm the page content and browser-tab title both change.
+- Choose light mode, visit Products, Gallery and Contact, then use Back and refresh. Light mode must remain selected. Repeat with dark mode.
+- On a phone, confirm the OHGS wordmark is dark and clear in light mode, bright in dark mode, and the menu icon is easy to see.
+- Scroll down: the fixed header must become smaller. Scroll back to the top: it must return to its normal size. Open the mobile menu in both states.
+- Look for the smooth header/logo motion and the thin colored scroll-progress line. With reduced motion enabled in the device settings, motion is disabled.
+- On a slow connection, the page badge clears as soon as the document is ready. Pictures, map, videos and form requests have their own indicators. Scroll to the Contact map and confirm the page badge does not return.
+- Product pictures must occupy equal-height frames across each row. The INGCO compactor and cut-off saw must show the product without the phone-status borders.
+- Check Home, Products, Services, Gallery and Contact: headings, descriptions, labels and buttons must remain readable without horizontal scrolling.
+- On Home, check the construction campaign in light mode: its heading and description must be dark and clear on a pale cream/blue background, while poster captions remain bright on their dark cards.
+- The icon shows the current mode: moon means dark and sun means light. Tap it twice and confirm the full page and browser bar change each time.
+- Home has seven videos: the showroom tour, team message, drill demo, Build with us campaign, tool cabinet, full shop tour and showroom walkthrough.
+- Gallery must contain all ten videos with short, easy-to-scan captions.
+- One visible video starts muted automatically. Tap Sound on for audio. Videos pause only once they leave the screen, retaining their position when you return. Network speed estimates no longer block previews; slower connections buffer normally. Data Saver and reduced-motion settings retain Play. Browser autoplay restrictions also retain Play.
+If the release number is older, check Vercel's repository, production branch and root directory. If the release is correct but a file fails to load, confirm that all media and media/responsive files were uploaded.
+This package includes fresh v41 cache keys, continuous playback, category browsing, quick page readiness, local loading feedback, persistent themes, an animated compact header, aligned images, responsive media and a static build command with dist output.
+
+The only source folders are:
+- media — page photos, all ten videos, posters, and share images
+- api — the optional contact-email function
+
+Important: keep the media folder beside index.html. The pages now load their optimized images from that folder instead of embedding large image data inside every HTML file.
+
+After the deployment is live, follow GOOGLE_SEARCH_SETUP.txt to submit the sitemap to Google Search Console.
+
+Never upload a real SMTP password to GitHub. Add SMTP_PASS only in Vercel Environment Variables.
+
+VIDEO CHECK: Scroll away from an automatic preview and return. It must resume from its saved position. Manually paused videos stay paused. Buffering must not reset it to the first frame. The one-second storefront glimpse remains in Gallery; Home now uses the longer tool-cabinet video.
+
+V41 PLAYBACK: videos start muted when visible and loop; using a video no longer disables autoplay farther down the page. Manual playback ends with Replay. Delayed events from an inactive video cannot interrupt the selected video.
+DEPLOYMENT CHECK: open /deploy-test and compare the Page, Video controller and Version file after pressing Check deployed files. All three should be v41-visible-video-autoplay.

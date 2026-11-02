@@ -1,0 +1,18 @@
+OHGS — SIMPLE GOOGLE SEARCH SETUP
+
+The website code is prepared for Google, but Google decides when to crawl and rank it. After the new version is live:
+
+1. Open https://search.google.com/search-console and add the Domain property: ohgs.co.tz
+2. Copy the TXT verification record Google gives you into the DNS provider that manages ohgs.co.tz.
+3. After verification, open Sitemaps and submit: https://ohgs.co.tz/sitemap.xml
+4. Open URL Inspection, inspect https://ohgs.co.tz/ and choose Request indexing.
+5. Also request indexing for /products, /contact and the most important product pages.
+6. Keep the business name, phone number and Uhuru Road address consistent on the website, Google Business Profile and social pages.
+7. Add new products and real photos regularly. Do not copy descriptions from other websites.
+
+Useful live checks:
+- https://ohgs.co.tz/robots.txt
+- https://ohgs.co.tz/sitemap.xml
+- https://ohgs.co.tz/version-check.txt
+
+Google indexing is not instant. Search Console will show crawl and indexing progress after deployment.

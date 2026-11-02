@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#07111f"><meta name="color-scheme" content="light dark"><script id="ohgs-boot">/* Inlined in the head of every page: no network request before restoring the theme. */
+(function(){
+  'use strict';
+  var root=document.documentElement;
+  var key='ohgs-theme',backup='ohgs-theme-backup';
+  function valid(value){return value==='light'||value==='dark'}
+  function cookieTheme(){
+    try{var match=document.cookie.match(/(?:^|;\s*)ohgs-theme-backup=(light|dark)(?:;|$)/);return match?match[1]:null}catch(error){return null}
+  }
+  function readTheme(){
+    var value=cookieTheme();if(valid(value))return value;
+    try{value=sessionStorage.getItem(backup);if(valid(value))return value}catch(error){}
+    try{value=localStorage.getItem(key);if(valid(value))return value}catch(error){}
+    return null;
+  }
+  function saveTheme(mode){
+    if(!valid(mode))return;
+    var saved=false;
+    try{localStorage.setItem(key,mode);saved=localStorage.getItem(key)===mode}catch(error){}
+    var secure=location.protocol==='https:'?'; Secure':'';
+    if(saved){
+      try{sessionStorage.removeItem(backup)}catch(error){}
+      try{document.cookie=backup+'=; Path=/; Max-Age=0; SameSite=Lax'+secure}catch(error){}
+    }else{
+      try{sessionStorage.setItem(backup,mode)}catch(error){}
+      try{document.cookie=backup+'='+mode+'; Path=/; Max-Age=31536000; SameSite=Lax'+secure}catch(error){}
+    }
+  }
+  var initial=readTheme()||'dark';
+  root.setAttribute('data-theme',initial);
+  root.style.colorScheme='only '+initial;
+  var meta=document.querySelector('meta[name="theme-color"]');
+  if(meta)meta.setAttribute('content',initial==='light'?'#f5f9fd':'#07111f');
+
+  // Record early asset events so cached images/maps never get a late spinner.
+  ['load','error'].forEach(function(name){document.addEventListener(name,function(event){
+    var el=event.target;if(el&&/^(IMG|IFRAME)$/.test(el.tagName))el.dataset.ohgsAssetState=name==='load'?'loaded':'error';
+  },true)});
+  var ended=false,showTimer,limitTimer;
+  function sw(){
+    if(root.lang==='sw')return true;
+    try{return localStorage.getItem('ohgs-lang')==='sw'}catch(error){return false}
+  }
+  function label(){
+    var text=document.querySelector('.site-loading-text');if(!text)return;
+    text.dataset.en='Loading…';
+    text.dataset.sw='Inapakia…';
+    text.textContent=sw()?text.dataset.sw:text.dataset.en;
+  }
+  function show(){
+    if(ended||document.readyState==='complete')return;
+    root.setAttribute('data-ohgs-loading','active');label();
+  }
+  function finish(){
+    if(ended)return;ended=true;
+    clearTimeout(showTimer);clearTimeout(limitTimer);
+    root.removeAttribute('data-ohgs-loading');
+    setTimeout(function(){var el=document.getElementById('ohgs-load-indicator');if(el)el.hidden=true},90);
+  }
+  window.OHGSBoot={readTheme:readTheme,saveTheme:saveTheme,finish:finish};
+  showTimer=setTimeout(show,60);
+  // Only the document startup uses this badge. Images, maps and video load locally.
+  limitTimer=setTimeout(finish,2000);
+  document.addEventListener('DOMContentLoaded',finish,{once:true});
+  if(document.readyState!=='loading')finish();
+  window.addEventListener('load',finish,{once:true});
+  window.addEventListener('pageshow',function(event){if(event.persisted)finish()});
+})();
+</script><script src="ohgs-theme-init.js?v=v41-visible-video-autoplay" defer=""></script><title>Deploy Test | OHGS Hardware</title><link rel="icon" href="favicon.png"><meta name="ohgs-release" content="v41-visible-video-autoplay">
+
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="stylesheet" href="ohgs-site.css?v=v41-visible-video-autoplay"></head><body id="top"><div id="ohgs-load-indicator" class="site-loading-indicator" role="status" aria-live="polite" aria-atomic="true"><span class="loading-brand" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><circle cx="256" cy="256" r="226" fill="#fff"></circle><circle cx="256" cy="256" r="214" fill="#fff" stroke="#e8eef7" stroke-width="10"></circle><path d="M110 252 256 118l146 134v55L256 176 110 307z" fill="#12325a"></path><path d="M292 174 402 272v35L292 209z" fill="#d32f36"></path><path d="M146 279h64v118h-64z" fill="#12325a"></path><path d="M166 315c14-26 30-26 44 0v18c-14-22-30-22-44 0z" fill="#fff"></path><path d="M230 238h52v159h-52z" fill="#12325a"></path><path d="M240 240v-44h32v44h21v27l-37 32-37-32v-27z" fill="#fff"></path><path d="M317 240h51v157h-51z" fill="#d32f36"></path><path d="M334 258h17v119h-17z" fill="#fff" opacity=".92"></path><path d="M378 296h40v101h-40z" fill="#d32f36"></path><path d="M390 310h16v87h-16z" fill="#fff" opacity=".9"></path><text x="255" y="454" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="72" font-weight="900" fill="#d32f36">OHGS</text></svg></span><span class="loading-copy"><strong>OHGS</strong><span class="site-loading-text" data-en="Loading…" data-sw="Inapakia…">Loading…</span></span></div><header class="site-header"><a class="brand" href="index.html"><img src="media/ohgs-header-pro-badge.svg" alt="OHGS Hardware" decoding="async" loading="eager"><span class="brand-copy"><strong>OHGS</strong><small>HARDWARE</small></span></a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="nav-links"><a href="index.html">Home</a><a href="products.html">Products</a><a href="contact.html">Contact</a></nav><div class="header-actions"><button class="theme-toggle" type="button"><span class="theme-icon">🌙</span></button><button class="lang-toggle" type="button">EN / SW</button><a class="whatsapp" href="https://wa.me/255689528193" target="_blank" rel="noopener">WhatsApp</a></div></header><main><section class="page-hero"><div class="wrap"><span class="kicker" data-en="Deployment check" data-sw="Ukaguzi wa toleo">Deployment check</span><h1 data-en="Confirm the update is live." data-sw="Hakikisha sasisho limewekwa.">Confirm the update is live.</h1><p class="lead" data-en="Use this page after uploading the website. All three versions below should match." data-sw="Tumia ukurasa huu baada ya kupakia tovuti. Matoleo yote matatu hapa chini yafanane.">Use this page after uploading the website. All three versions below should match.</p><div class="release-check"><ul class="release-check-list"><li><strong data-en="Page" data-sw="Ukurasa">Page</strong><code id="release-html">v41-visible-video-autoplay</code></li><li><strong data-en="Video controller" data-sw="Kidhibiti cha video">Video controller</strong><code id="release-runtime">Not loaded</code></li><li><strong data-en="Version file" data-sw="Faili la toleo">Version file</strong><code id="release-file">Not checked yet</code></li></ul><p id="deployment-check-status" class="release-check-status" role="status">Check the deployed files below.</p><button id="check-deployment" class="btn" type="button" data-en="Check deployed files" data-sw="Kagua mafaili yaliyopakiwa">Check deployed files</button></div><div class="actions"><a class="btn ghost" href="index.html" data-en="Open Home" data-sw="Fungua Mwanzo">Open Home</a><a class="btn ghost" href="version-check.txt" data-en="Open version file" data-sw="Fungua faili la toleo">Open version file</a></div></div></section></main><footer class="footer"><div class="wrap footer-bottom">OHGS deploy test page.</div></footer><script src="ohgs-pro-stable-launch.js?v=stable-launch-v41-visible-video-autoplay" defer=""></script><script src="ohgs-mobile-media.js?v=v41-visible-video-autoplay" defer=""></script><script src="ohgs-loading.js?v=v41-visible-video-autoplay" defer=""></script><script src="ohgs-deployment-check.js?v=v41-visible-video-autoplay" defer></script></body></html>

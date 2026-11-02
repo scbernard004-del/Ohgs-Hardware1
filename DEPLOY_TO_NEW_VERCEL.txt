@@ -1,0 +1,22 @@
+OHGS WEBSITE — NEW VERCEL PROJECT AND DOMAIN
+
+1. First upload this package to the ROOT of the correct GitHub repository.
+2. In Vercel choose Add New > Project, then import that GitHub repository.
+3. Select the production branch that contains the upload (normally main).
+4. Set Framework Preset to Other.
+5. Set Root Directory to ./ (the repository root).
+6. Set Build Command to: npm run build
+   Set Output Directory to: dist
+   These settings are also included in vercel.json so Vercel publishes the checked website files, not an older build.
+7. Deploy without a previous build cache. Open /version-check.txt and confirm it says v41-visible-video-autoplay.
+8. First confirm the NEW project's temporary .vercel.app address is Ready and working.
+9. In Vercel open Domains, use the menu beside your custom domain, choose Move, and select the new project. If Move is unavailable, remove the domain from the old project and immediately add it under the new project's Settings > Domains.
+10. At your domain provider, enter exactly the DNS records Vercel displays. Do not guess the records. If the domain already points to Vercel, DNS may not need to change.
+11. In Vercel Settings > Git, confirm the Production Branch is the branch you uploaded.
+12. Add the contact-email values under Settings > Environment Variables. Keep SMTP_PASS private and never upload it to GitHub.
+
+LIVE VERSION CHECK
+Your deployed-domain/version-check.txt must show:
+OHGS RELEASE v41-visible-video-autoplay
+
+After deployment, follow GOOGLE_SEARCH_SETUP.txt to verify the domain and submit the sitemap to Google.

@@ -1,0 +1,35 @@
+For current v41 playback and design QA, read AUTOPLAY_QA.txt.
+
+For the current v39 continuous-playback and design QA, read AUTOPLAY_QA.txt.
+
+OHGS v37 — FAST, LOCAL LOADING FEEDBACK QA
+Date: 26 October 2026
+Release: v37-loading-feedback
+
+Changes
+- Page-level loading finishes on DOMContentLoaded. It does not wait for the Contact map, pictures or the window load event.
+- The badge appears only if document startup is still pending after 60 milliseconds. It fades out in 80 milliseconds and is hidden within 90 milliseconds of readiness. There is no minimum display time; a two-second fail-safe covers interrupted startup.
+- All 128 content-picture positions have local feedback. Lazy pictures start their indicator near the viewport. Images already loaded from cache do not show a late icon.
+- The Contact map has its own indicator inside its frame. Each picture/map icon clears in that resource's load or error event. A 12-second fail-safe stops animation if a request hangs.
+- Early asset events are recorded before the full controller starts, preventing cached maps and pictures from flashing an unnecessary indicator.
+- Video buffering feedback is retained. Form requests now have a button spinner and busy state that clear on success or failure; repeated pending submissions are ignored.
+- English/Kiswahili messages, saved themes, header motion, image alignment and on-demand video loading are retained. Indicators do not intercept clicks. Reduced-motion settings stop decorative rotation.
+
+Checks completed
+- Static QA: 34 HTML pages, 33 public pages, 195 image placements, 23 video placements, 1,222 bilingual text entries and 33 canonical URLs.
+- 66 page/theme combinations: document-ready cleanup, saved theme, language switching, page restore and no late feedback on cached pictures.
+- Controlled-clock checks: pending image/map independence; page badge gone within 90 milliseconds after DOM ready while resources remain pending; immediate resource load/error cleanup; no restart after a late window load event; lazy visibility; cached map; Kiswahili labels and fail-safe cleanup.
+- Form pending/success/failure feedback and duplicate-pending-request protection. Failure preserves the enquiry fields.
+- Chrome: real Contact page and map load without a lingering page icon. A 390-pixel responsive frame verified Gallery alignment and no horizontal overflow.
+- Chrome delayed-response fixture: six-second image response and nine-second map response. The document was interactive and its page icon was gone while both local indicators were active. Both indicators were hidden once their own resources completed.
+- The temporary delay configuration was removed, and the original preview configuration was restored. Test pages are excluded from the upload ZIP.
+- JavaScript syntax, local asset references, responsive WebP decoding and production build pass.
+
+Limits
+The complete functional matrix uses a DOM environment. The additional Chrome checks use a desktop browser and a responsive frame, not physical phone hardware. Slow-resource browser checks use controlled local responses rather than a real mobile connection. Live SMTP delivery was not tested.
+
+After deployment
+1. Confirm /version-check.txt contains v37-loading-feedback.
+2. Open Contact and scroll to the map. Loading the map must not bring back the page-level icon.
+3. On a slower connection, pictures, map and videos should show feedback beside their own content, clearing when ready. Cached pictures should appear directly.
+4. Check both themes and languages. A ready page should have no lingering loading badge.

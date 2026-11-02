@@ -1,0 +1,33 @@
+OHGS v41 — AUTOMATIC VIDEO PLAYBACK QA
+Date: 2 November 2026
+Release: v41-visible-video-autoplay
+
+What changed
+- Visible previews request playback immediately, muted and inline, with looping enabled. The browser can buffer while fulfilling the play request instead of waiting for canplay before requesting playback.
+- Network speed estimates no longer prevent autoplay. The optimized mobile MP4 is used for every automatic preview. Data Saver, reduced-motion preferences, offline state and browser autoplay restrictions retain the Play control.
+- A preview becomes eligible when at least 30% visible. The existing 5% exit threshold and 450ms grace period avoid interruptions from small scroll movements.
+- Using Play, native controls or Sound on no longer turns off autoplay for the whole page. After that video leaves the screen, the next visible preview starts muted automatically.
+- An explicitly paused video stays paused. Returning to a video that was paused automatically resumes its saved position. Only one video plays at a time and offscreen sources are not loaded in advance.
+- Existing timing protections, bilingual controls, source fallback, buffering feedback, saved themes and responsive layout are retained.
+- Release keys, deployment checks and upload instructions are updated to v41.
+
+Checks completed
+- Reproduced the missing immediate playback request against the prior v40 controller; the new autoplay regression passes after the fix.
+- All 23 video placements at mobile and desktop settings: 46 cases. Source reuse, saved playback position, scrolling, buffering, network changes, tab restore, autoplay denial and manual controls pass.
+- Focused autoplay cases pass with missing connection data and 3G/2G estimates. Automatic playback after Sound on, manual Play and native Pause works in the next viewport. Deliberately paused videos stay paused after scrolling away and back.
+- Delayed playing/pause/ended/error events, native takeover, looping, bilingual Replay and duplicate initialization regressions pass.
+- Static QA passes across 34 HTML pages (33 public), 193 image placements, 23 video placements, 1,242 bilingual entries and 33 unique canonical URLs.
+- 66 page/theme combinations plus local loading, cached and pending assets, bilingual labels and form success/failure checks pass. The theme fixture explicitly marks cached maps as loaded; pending-map behavior is tested separately.
+- Deployment release checker tests pass for matching/stale/mixed files, missing files, wrong HTML responses, network failure, duplicate clicks and bilingual statuses.
+- Chrome mobile check in a 390px responsive frame: the real 42-second showroom video started muted without a click despite a controlled 3G speed estimate. Sound on worked. Scrolling to the campaign paused the showroom at its saved time and automatically played the campaign muted with looping enabled. No loading badge remained over playback.
+- Chrome desktop check: the real showroom preview advanced beyond 18 seconds, muted and looping, with only one source loaded. Light mode remained saved and readable; no horizontal overflow at 1348px content width. Mobile light/dark visual checks retained a readable logo, header and video captions without horizontal overflow at 375px content width.
+- JavaScript syntax and production build pass. Test fixtures and test dependencies are excluded from the ZIP.
+
+Live deployment finding
+A fresh Chrome check of https://www.ohgs.co.tz/ still reports v31-final-light-mode-contrast and six Home videos. This ZIP is v41. Vercel team/project access returns 403 because team authorization is missing. No deployment or domain change has been made in this request.
+
+Install and confirm
+Follow START_HERE.txt. Update the repository connected to the Vercel project that owns the live domain. After production deployment, /version-check.txt and all three /deploy-test values must show v41-visible-video-autoplay. Test Home playback afterward.
+
+Limits
+The complete functional matrix uses a DOM environment and controlled media events. Actual media and visual checks use Chrome with desktop and responsive mobile frames, not physical iPhone/Android hardware. The controlled 3G check changes the browser's reported estimate, not actual network bandwidth. Original video files are unchanged. Device battery/data settings or browser policy can require a tap; the Play button remains available. SMTP delivery was not retested.

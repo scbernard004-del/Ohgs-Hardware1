@@ -1,0 +1,2 @@
+OHGS RELEASE v41-visible-video-autoplay — visible videos start muted automatically, loop smoothly, and keep autoplay working after manual controls.
+2026-11-02

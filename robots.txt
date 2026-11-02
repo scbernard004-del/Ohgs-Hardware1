@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /deploy-test
+Disallow: /deploy-test.html
+
+Sitemap: https://ohgs.co.tz/sitemap.xml

@@ -1,0 +1,49 @@
+For current v41 playback and design QA, read AUTOPLAY_QA.txt.
+
+For the current v39 continuous-playback and design QA, read AUTOPLAY_QA.txt.
+
+For the current v37 loading-feedback QA, read THEME_LOADING_QA.txt.
+
+OHGS v35 — IMAGE ALIGNMENT AND SCROLLING HEADER QA
+Date: 20 October 2026
+
+Fixes in this release
+- All 93 product-card, product-detail and service image positions now have a stable 4:3 frame in the HTML. Pictures cannot stretch the frame from their intrinsic portrait height, and alignment works before JavaScript runs.
+- Home's primary video and two preview cards share aligned outer top and bottom edges. The full video remains visible during playback.
+- Header changes from 76 to 64 pixels on desktop and 68 to 60 pixels on mobile/tablet. Logo and wordmark shrink with it; theme, menu and language controls retain their touch sizes.
+- Separate scroll thresholds prevent flickering near the top. Header returns to full size and removes its shadow at the top. The mobile menu follows the current header height.
+- Phone-status borders are excluded from the INGCO compactor and cut-off-saw display areas without changing the original product photos or their labels.
+- Removed a phone-status banner from About. Workshop now shows an air compressor matching its product heading. Corrected Gallery's trolley label and removed its duplicate tile.
+- Each video shows one clear Play button before loading and native controls during playback.
+- All pages use the new v37-loading-feedback cache key.
+
+Earlier improvements retained
+- One coherent stylesheet replaces the overlapping legacy design styles on every public page.
+- Stable header with visible logo, 44-pixel theme/menu controls and readable language selector. Mobile ordering remains in the bottom dock.
+- Text appears before the Home videos. Compact portrait videos preserve the full frame. Product pictures use contain sizing so labels and equipment are not cropped.
+- Native responsive WebP images, intrinsic dimensions and lazy loading. Below-fold video posters load near the screen. Video files start downloading only after Play is selected.
+- Lower-bandwidth mobile video files. All MP4s use fast-start metadata. The new campaign mobile file is about 81% smaller than the original upload.
+- The 14-second Build with us video is included on Home, Gallery, Services, Projects, Construction Materials and the Road Cutter page.
+- The video contains a construction campaign and OHGS branding. It does not establish a sale price, machine model, rental service or stock. The site adds a project-supply enquiry rather than making those unsupported claims.
+- Eleven product links now open matching product detail pages. Product search works in English and Kiswahili; WhatsApp prefilled requests switch language too.
+- Replaced an empty Gallery video poster and regenerated two empty optimized image files.
+
+Checks completed
+- 34 HTML pages: 33 public pages and one noindex deployment test.
+- 33 distinct page titles/canonical URLs, sitemap inclusion, valid structured data, local assets and links.
+- Language, browser-tab title, theme palette, menu open/close and WhatsApp link behavior exercised on every public page in DOM tests.
+- 23 video Play actions; source selection checked at 320, 360, 390, 430, 768, 1024 and 1440-pixel viewport settings.
+- Header expand/compact/reset behavior exercised on every public page at scroll positions 0, 81, 40, 24, 120 and 0 pixels. All 93 static image frames verified.
+- Product search, no-results feedback, clear action and contact form success/failure behavior exercised.
+- Referenced image and video files are nonempty; responsive WebP files decode successfully; all 20 MP4 files have fast-start metadata.
+- Main theme and action colors are unchanged from the previous contrast review. JavaScript syntax and production build pass. CSS structure and explicit image sizing rules checked.
+
+Verification limits
+DOM tests check interactions and source logic; they do not render browser screenshots or prove layout on a physical phone. The current environment has no supported local preview browser. SMTP delivery is not tested against a live email account.
+
+After deployment
+1. Open your domain/version-check.txt and confirm v37-loading-feedback.
+2. On a phone, view Home, Products, Gallery and Contact in both themes and languages. Rotate the phone and confirm every control stays visible. Scroll down and back up; confirm the header shrinks and expands and the menu stays directly below it.
+3. Play the new video, then another. Only one video should play at a time; full-screen and direct video links should work.
+4. Check that product pictures align across a row and that the compactor/cut-off-saw pictures show no phone-status borders. Check search, WhatsApp, Call and the contact form. Confirm a real form message arrives when Vercel SMTP settings are configured.
+5. Submit https://ohgs.co.tz/sitemap.xml in Google Search Console after deployment.

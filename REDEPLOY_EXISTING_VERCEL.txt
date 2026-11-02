@@ -1,0 +1,26 @@
+OHGS WEBSITE — UPDATE AN EXISTING GITHUB AND VERCEL PROJECT
+
+1. In Vercel, open the project whose Domains section contains your live address, then extract OHGS_GITHUB_UPLOAD_READY.zip.
+2. Open the GitHub repository connected to Vercel and select the production branch, normally main.
+3. Choose Add file > Upload files.
+4. With GitHub Desktop: clone the connected repository, copy all extracted files into its folder, Commit and Push. With the GitHub website: upload batches of no more than 100 files, including every file inside media/responsive at the same folder path.
+5. Commit all uploads. Do not upload the ZIP itself or a real SMTP password.
+6. Vercel should start a deployment automatically. In Settings > Git, confirm the repository and Production Branch are correct.
+7. In Settings > Build and Deployment, use:
+   Framework Preset: Other
+   Root Directory: ./
+   Build Command: npm run build
+   Output Directory: dist
+8. If an automatic deployment does not start, open Deployments, select the latest production deployment and choose Redeploy.
+9. Turn off Use existing Build Cache when redeploying this update.
+10. Open /version-check.txt on the live domain and confirm v41-visible-video-autoplay.
+11. On the Home page, change the language to Kiswahili. Page content and the browser-tab title must change. Home must contain seven videos and Gallery must contain ten.
+12. On a phone and computer, test both modes. In light mode the OHGS wordmark must be solid dark blue and the Home construction campaign must show dark text on its pale background. The logo, menu lines, headings, paragraphs and buttons must remain clear without horizontal scrolling. The icon shows the current mode: moon is dark and sun is light.
+13. Scroll down and back to the top. Confirm that the header shrinks and expands, and that the mobile menu opens below it in both states. Product image frames and Home video card edges should align.
+14. Select light mode and open Products, Gallery and Contact. Refresh and use Back. The saved mode must remain. Repeat with dark mode. Check that the page badge clears promptly and does not return when the Contact map starts loading. Pictures, maps, videos and form requests use local feedback.
+
+The existing custom domain and environment variables remain attached when you update the same Vercel project.
+
+After deployment, follow GOOGLE_SEARCH_SETUP.txt to verify the domain and submit the sitemap to Google.
+
+Final check: open /deploy-test on the live domain and press Check deployed files. All three versions should be v41-visible-video-autoplay. Then test Home video playback.

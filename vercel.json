@@ -1,0 +1,182 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-OHGS-Release",
+          "value": "v41-visible-video-autoplay"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/media/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=604800, stale-while-revalidate=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/ohgs-pro-stable-launch.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/ohgs-premium-design.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/qa-final.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/ohgs-pro-stable-launch.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/ohgs-premium-design.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/ohgs-theme-init.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/ohgs-email-notifications.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/ohgs-site.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/ohgs-mobile-media.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/ohgs-loading.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/version-check.txt",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/deploy-test",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/deploy-test.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/ohgs-deployment-check.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact OHGS Hardware in Arusha</title><meta name="description" content="Call or WhatsApp OHGS Hardware on 0689 528 193 for product advice, current stock and prices. Visit us on Uhuru Road, Arusha."><meta name="theme-color" content="#07111f"><meta name="color-scheme" content="light dark"><script id="ohgs-boot">/* Inlined in the head of every page: no network request before restoring the theme. */
+(function(){
+  'use strict';
+  var root=document.documentElement;
+  var key='ohgs-theme',backup='ohgs-theme-backup';
+  function valid(value){return value==='light'||value==='dark'}
+  function cookieTheme(){
+    try{var match=document.cookie.match(/(?:^|;\s*)ohgs-theme-backup=(light|dark)(?:;|$)/);return match?match[1]:null}catch(error){return null}
+  }
+  function readTheme(){
+    var value=cookieTheme();if(valid(value))return value;
+    try{value=sessionStorage.getItem(backup);if(valid(value))return value}catch(error){}
+    try{value=localStorage.getItem(key);if(valid(value))return value}catch(error){}
+    return null;
+  }
+  function saveTheme(mode){
+    if(!valid(mode))return;
+    var saved=false;
+    try{localStorage.setItem(key,mode);saved=localStorage.getItem(key)===mode}catch(error){}
+    var secure=location.protocol==='https:'?'; Secure':'';
+    if(saved){
+      try{sessionStorage.removeItem(backup)}catch(error){}
+      try{document.cookie=backup+'=; Path=/; Max-Age=0; SameSite=Lax'+secure}catch(error){}
+    }else{
+      try{sessionStorage.setItem(backup,mode)}catch(error){}
+      try{document.cookie=backup+'='+mode+'; Path=/; Max-Age=31536000; SameSite=Lax'+secure}catch(error){}
+    }
+  }
+  var initial=readTheme()||'dark';
+  root.setAttribute('data-theme',initial);
+  root.style.colorScheme='only '+initial;
+  var meta=document.querySelector('meta[name="theme-color"]');
+  if(meta)meta.setAttribute('content',initial==='light'?'#f5f9fd':'#07111f');
+
+  // Record early asset events so cached images/maps never get a late spinner.
+  ['load','error'].forEach(function(name){document.addEventListener(name,function(event){
+    var el=event.target;if(el&&/^(IMG|IFRAME)$/.test(el.tagName))el.dataset.ohgsAssetState=name==='load'?'loaded':'error';
+  },true)});
+  var ended=false,showTimer,limitTimer;
+  function sw(){
+    if(root.lang==='sw')return true;
+    try{return localStorage.getItem('ohgs-lang')==='sw'}catch(error){return false}
+  }
+  function label(){
+    var text=document.querySelector('.site-loading-text');if(!text)return;
+    text.dataset.en='Loading…';
+    text.dataset.sw='Inapakia…';
+    text.textContent=sw()?text.dataset.sw:text.dataset.en;
+  }
+  function show(){
+    if(ended||document.readyState==='complete')return;
+    root.setAttribute('data-ohgs-loading','active');label();
+  }
+  function finish(){
+    if(ended)return;ended=true;
+    clearTimeout(showTimer);clearTimeout(limitTimer);
+    root.removeAttribute('data-ohgs-loading');
+    setTimeout(function(){var el=document.getElementById('ohgs-load-indicator');if(el)el.hidden=true},90);
+  }
+  window.OHGSBoot={readTheme:readTheme,saveTheme:saveTheme,finish:finish};
+  showTimer=setTimeout(show,60);
+  // Only the document startup uses this badge. Images, maps and video load locally.
+  limitTimer=setTimeout(finish,2000);
+  document.addEventListener('DOMContentLoaded',finish,{once:true});
+  if(document.readyState!=='loading')finish();
+  window.addEventListener('load',finish,{once:true});
+  window.addEventListener('pageshow',function(event){if(event.persisted)finish()});
+})();
+</script><script src="ohgs-theme-init.js?v=v41-visible-video-autoplay" defer=""></script><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="favicon.png"><meta name="ohgs-release" content="v41-visible-video-autoplay">
+
+
+
+
+<!-- OHGS SEO START -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://ohgs.co.tz/contact">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OHGS Hardware">
+<meta property="og:title" content="Contact OHGS Hardware in Arusha">
+<meta property="og:description" content="Call or WhatsApp OHGS Hardware on 0689 528 193 for product advice, current stock and prices. Visit us on Uhuru Road, Arusha.">
+<meta property="og:url" content="https://ohgs.co.tz/contact">
+<meta property="og:image" content="https://ohgs.co.tz/media/responsive/ohgs-showroom-customer-service-19599bf4-768.webp">
+<meta property="og:image:alt" content="OHGS Hardware in Arusha">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact OHGS Hardware in Arusha">
+<meta name="twitter:description" content="Call or WhatsApp OHGS Hardware on 0689 528 193 for product advice, current stock and prices. Visit us on Uhuru Road, Arusha.">
+<meta name="twitter:image" content="https://ohgs.co.tz/media/responsive/ohgs-showroom-customer-service-19599bf4-768.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"HardwareStore","@id":"https://ohgs.co.tz/#store","name":"OHGS Hardware & General Supply LTD","legalName":"Olotu Hardware & General Supply LTD","url":"https://ohgs.co.tz","logo":"https://ohgs.co.tz/media/ohgs-header-pro-badge.svg","image":"https://ohgs.co.tz/media/ohgs-social-preview.png","telephone":"+255689528193","address":{"@type":"PostalAddress","streetAddress":"Uhuru Road","addressLocality":"Arusha","addressCountry":"TZ"},"sameAs":["https://www.instagram.com/olotuhardware/"]},{"@type":"WebSite","@id":"https://ohgs.co.tz/#website","url":"https://ohgs.co.tz","name":"OHGS Hardware","inLanguage":["en","sw"],"publisher":{"@id":"https://ohgs.co.tz/#store"}},{"@type":"WebPage","@id":"https://ohgs.co.tz/contact#webpage","url":"https://ohgs.co.tz/contact","name":"Contact OHGS Hardware in Arusha","description":"Call or WhatsApp OHGS Hardware on 0689 528 193 for product advice, current stock and prices. Visit us on Uhuru Road, Arusha.","isPartOf":{"@id":"https://ohgs.co.tz/#website"},"about":{"@id":"https://ohgs.co.tz/#store"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://ohgs.co.tz/media/responsive/ohgs-showroom-customer-service-19599bf4-768.webp"},"inLanguage":["en","sw"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ohgs.co.tz"},{"@type":"ListItem","position":2,"name":"Contact OHGS Hardware in Arusha","item":"https://ohgs.co.tz/contact"}]}]}</script>
+<!-- OHGS SEO END -->
+<link rel="stylesheet" href="ohgs-site.css?v=v41-visible-video-autoplay">
+</head><body id="top"><div id="ohgs-load-indicator" class="site-loading-indicator" role="status" aria-live="polite" aria-atomic="true"><span class="loading-brand" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><circle cx="256" cy="256" r="226" fill="#fff"></circle><circle cx="256" cy="256" r="214" fill="#fff" stroke="#e8eef7" stroke-width="10"></circle><path d="M110 252 256 118l146 134v55L256 176 110 307z" fill="#12325a"></path><path d="M292 174 402 272v35L292 209z" fill="#d32f36"></path><path d="M146 279h64v118h-64z" fill="#12325a"></path><path d="M166 315c14-26 30-26 44 0v18c-14-22-30-22-44 0z" fill="#fff"></path><path d="M230 238h52v159h-52z" fill="#12325a"></path><path d="M240 240v-44h32v44h21v27l-37 32-37-32v-27z" fill="#fff"></path><path d="M317 240h51v157h-51z" fill="#d32f36"></path><path d="M334 258h17v119h-17z" fill="#fff" opacity=".92"></path><path d="M378 296h40v101h-40z" fill="#d32f36"></path><path d="M390 310h16v87h-16z" fill="#fff" opacity=".9"></path><text x="255" y="454" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="72" font-weight="900" fill="#d32f36">OHGS</text></svg></span><span class="loading-copy"><strong>OHGS</strong><span class="site-loading-text" data-en="Loading…" data-sw="Inapakia…">Loading…</span></span></div><a href="#main-content" class="skip-link" data-en="Skip to content" data-sw="Nenda kwenye maudhui">Skip to content</a><header class="site-header">
+  <a class="brand" href="index.html" aria-label="OHGS Hardware home">
+    <img src="media/ohgs-header-pro-badge.svg" alt="OHGS Hardware logo" decoding="async" loading="eager">
+    <span class="brand-copy"><strong>OHGS</strong><small>HARDWARE</small></span>
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav-links" aria-label="Main navigation"><a class="" href="index.html" data-en="Home" data-sw="Mwanzo">Home</a><a class="" href="products.html" data-en="Products" data-sw="Bidhaa">Products</a><a class="" href="services.html" data-en="Services" data-sw="Huduma">Services</a><a class="" href="projects.html" data-en="Projects" data-sw="Miradi">Projects</a><a class="" href="gallery.html" data-en="Gallery" data-sw="Matunzio">Gallery</a><a class="" href="promotions.html" data-en="Offers" data-sw="Ofa">Offers</a><a class="" href="about.html" data-en="About" data-sw="Kuhusu">About</a><a class="active" href="contact.html" data-en="Contact" data-sw="Mawasiliano">Contact</a></nav>
+  <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Switch theme"><span class="theme-icon">🌙</span></button><button class="lang-toggle" type="button">EN / SW</button><a class="whatsapp" href="https://wa.me/255689528193?text=Hello%20OHGS%20I%20want%20to%20ask%20about%20OHGS%20products" target="_blank" rel="noopener">WhatsApp</a></div>
+</header><main id="main-content"><section class="page-hero page-hero-with-photos"><div class="wrap page-hero-layout"><div class="page-hero-copy"><span class="kicker">Contact</span><h1>Ask OHGS for price, availability or product advice.</h1><p class="lead">Send a quick request and the team can reply with current details.</p></div><div class="page-hero-photo-grid" aria-label="OHGS contact and customer support"><figure class="page-hero-photo page-hero-photo-primary"><img alt="Customers receiving product support inside the OHGS showroom" src="media/responsive/ohgs-showroom-customer-service-19599bf4-768.webp" srcset="media/responsive/ohgs-showroom-customer-service-19599bf4-480.webp 480w, media/responsive/ohgs-showroom-customer-service-19599bf4-768.webp 768w, media/responsive/ohgs-showroom-customer-service-19599bf4-1050.webp 1050w" sizes="(max-width: 699px) calc(100vw - 32px), (max-width: 899px) 80vw, 550px" width="768" height="1024" loading="eager" decoding="async" fetchpriority="high"></figure><figure class="page-hero-photo"><img alt="OHGS customer support information" src="media/responsive/ohgs-why-choose-us-poster-1c149bf1-768.webp" srcset="media/responsive/ohgs-why-choose-us-poster-1c149bf1-480.webp 480w, media/responsive/ohgs-why-choose-us-poster-1c149bf1-768.webp 768w, media/responsive/ohgs-why-choose-us-poster-1c149bf1-1024.webp 1024w" sizes="(max-width: 699px) calc(100vw - 32px), (max-width: 899px) 80vw, 550px" width="768" height="768" loading="lazy" decoding="async"></figure><figure class="page-hero-photo"><img alt="Customer consultation at the OHGS showroom counter" src="media/responsive/ohgs-customer-consultation-counter-923e104f-768.webp" srcset="media/responsive/ohgs-customer-consultation-counter-923e104f-480.webp 480w, media/responsive/ohgs-customer-consultation-counter-923e104f-768.webp 768w, media/responsive/ohgs-customer-consultation-counter-923e104f-1050.webp 1050w" sizes="(max-width: 699px) calc(100vw - 32px), (max-width: 899px) 80vw, 550px" width="768" height="1024" loading="lazy" decoding="async"></figure></div></div></section><section class="order-path" aria-label="How to order from OHGS">
+  <div class="wrap order-path-grid">
+    <div class="order-path-copy">
+      <span class="order-path-eyebrow" data-en="QUICK ORDER" data-sw="AGIZA HARAKA">QUICK ORDER</span>
+      <strong data-en="Send the product name or a photo." data-sw="Tuma jina la bidhaa au picha.">Send the product name or a photo.</strong>
+      <span data-en="We help confirm the right item, current stock and today’s price." data-sw="Tunakusaidia kuthibitisha bidhaa sahihi, stok iliyopo na bei ya leo.">We help confirm the right item, current stock and today’s price.</span>
+    </div>
+    <ol class="order-steps" aria-label="Three ordering steps">
+      <li><b>1</b><span data-en="Choose a product" data-sw="Chagua bidhaa">Choose a product</span></li>
+      <li><b>2</b><span data-en="Message OHGS" data-sw="Tuma ujumbe OHGS">Message OHGS</span></li>
+      <li><b>3</b><span data-en="Confirm stock &amp; price" data-sw="Thibitisha stok na bei">Confirm stock &amp; price</span></li>
+    </ol>
+    <div class="order-path-actions">
+      <a class="btn wa" href="https://wa.me/255689528193?text=Hello%20OHGS%2C%20I%20want%20to%20check%20stock%20and%20today%27s%20price" target="_blank" rel="noopener" data-product="Quick stock and price request"><span data-en="Check stock on WhatsApp" data-sw="Thibitisha stok WhatsApp">Check stock on WhatsApp</span></a>
+      <a class="btn ghost order-call" href="tel:+255689528193"><span data-en="Call OHGS" data-sw="Piga simu OHGS">Call OHGS</span></a>
+    </div>
+  </div>
+</section><section class="section"><div class="wrap contact-grid"><form class="contact-form" data-product="Website inquiry" novalidate="">
+        <div class="contact-form-heading"><span class="tag" data-en="PRODUCT REQUEST" data-sw="OMBI LA BIDHAA">PRODUCT REQUEST</span><h2 data-en="Tell us what you need." data-sw="Tuambie unachohitaji.">Tell us what you need.</h2><p data-en="Share the product name, size or job. OHGS can help you check the right item, stock and current price." data-sw="Tuma jina la bidhaa, ukubwa au kazi. OHGS inaweza kukusaidia kuthibitisha bidhaa sahihi, stok na bei ya sasa.">Share the product name, size or job. OHGS can help you check the right item, stock and current price.</p></div>
+        <label><span data-en="Name" data-sw="Jina">Name</span><input name="name" autocomplete="name" minlength="2" placeholder="Your name" required=""></label>
+        <label><span data-en="Phone / WhatsApp" data-sw="Simu / WhatsApp">Phone / WhatsApp</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" minlength="9" placeholder="Your phone number" required=""></label>
+        <label><span data-en="Product or message" data-sw="Bidhaa au ujumbe">Product or message</span><textarea name="message" minlength="5" placeholder="What product are you looking for?" rows="5" required=""></textarea></label>
+        <label class="form-honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+        <button class="btn wa" type="submit"><span data-en="Send product request" data-sw="Tuma ombi la bidhaa">Send product request</span></button>
+        <a class="contact-whatsapp-fallback" href="https://wa.me/255689528193?text=Hello%20OHGS%2C%20I%20want%20to%20ask%20about%20a%20product" target="_blank" rel="noopener" data-product="Contact form WhatsApp alternative"><span data-en="Prefer WhatsApp? Message OHGS directly" data-sw="Unapendelea WhatsApp? Tuma ujumbe OHGS moja kwa moja">Prefer WhatsApp? Message OHGS directly</span></a>
+        <p class="contact-form-note" data-en="Use this form only for a product request. No payment is collected here." data-sw="Tumia fomu hii kuuliza kuhusu bidhaa. Hakuna malipo yanayokusanywa hapa.">Use this form only for a product request. No payment is collected here.</p>
+        <p class="ohgs-form-status" role="status" aria-live="polite"></p>
+      </form><div class="card text-card"><div class="card-body"><h3>Reach OHGS</h3><p>Location: Uhuru Road, Arusha<br>WhatsApp: +255 689 528 193<br><a class="instagram-link" href="https://www.instagram.com/olotuhardware/" target="_blank" rel="noopener" aria-label="Open OHGS on Instagram">Instagram: @olotuhardware</a></p><a class="btn wa" href="https://wa.me/255689528193?text=Hello%20OHGS%20I%20want%20to%20ask%20about%20I%20need%20help" target="_blank" rel="noopener">Open WhatsApp</a><a class="btn instagram instagram-contact-card" href="https://www.instagram.com/olotuhardware/" target="_blank" rel="noopener" data-en="Open Instagram" data-sw="Fungua Instagram">Open Instagram</a></div></div></div></section><section class="section soft location-section" id="location"><div class="wrap"><div class="location-heading"><span class="kicker" data-en="Find OHGS" data-sw="Pata OHGS">Find OHGS</span><h2 data-en="Visit our shop on Uhuru Road, Arusha." data-sw="Tembelea duka letu Uhuru Road, Arusha.">Visit our shop on Uhuru Road, Arusha.</h2><p class="lead" data-en="Use the interactive map for directions, or message OHGS before travelling to confirm the product you need is available." data-sw="Tumia ramani kupata maelekezo, au tuma ujumbe OHGS kabla ya safari kuthibitisha bidhaa unayohitaji ipo.">Use the interactive map for directions, or message OHGS before travelling to confirm the product you need is available.</p></div><div class="location-grid"><div class="map-card"><div class="map-frame"><iframe src="https://www.google.com/maps?q=Olotu%20Hardware%20%26%20General%20Supply%20Ltd%2C%20Uhuru%20Road%2C%20Arusha%2C%20Tanzania&amp;output=embed" title="Google Maps location for Olotu Hardware and General Supply Ltd on Uhuru Road, Arusha" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen=""></iframe></div><a class="map-verified-label" href="https://www.google.com/maps/search/?api=1&amp;query=Olotu%20Hardware%20%26%20General%20Supply%20Ltd%2C%20Uhuru%20Road%2C%20Arusha%2C%20Tanzania" target="_blank" rel="noopener"><strong><svg class="map-label-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span>Olotu Hardware · Uhuru Road, Arusha</span></strong><span data-en="Open in Google Maps" data-sw="Fungua Google Maps">Open in Google Maps</span></a></div><article class="location-card"><h3 data-en="OHGS Hardware &amp; General Supply" data-sw="OHGS Hardware &amp; General Supply">OHGS Hardware &amp; General Supply</h3><div class="location-details"><div class="location-detail"><span class="location-icon location-icon-pin" aria-hidden="true"><svg class="location-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><div><span data-en="Location" data-sw="Mahali">Location</span><strong>Uhuru Road, Arusha, Tanzania</strong></div></div><div class="location-detail"><span class="location-icon location-icon-message" aria-hidden="true"><svg class="location-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path><path d="M8 9h8M8 13h5"></path></svg></span><div><span data-en="WhatsApp" data-sw="WhatsApp">WhatsApp</span><strong>+255 689 528 193</strong></div></div><div class="location-detail"><span class="location-icon location-icon-instagram" aria-hidden="true"><svg class="location-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></span><div><span>Instagram</span><strong><a class="instagram-link" href="https://www.instagram.com/olotuhardware/" target="_blank" rel="noopener">@olotuhardware</a></strong></div></div></div><div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Olotu%20Hardware%20%26%20General%20Supply%20Ltd%2C%20Uhuru%20Road%2C%20Arusha%2C%20Tanzania" target="_blank" rel="noopener" data-en="Open in Google Maps" data-sw="Fungua Google Maps">Open in Google Maps</a><a class="btn instagram instagram-location" href="https://www.instagram.com/olotuhardware/" target="_blank" rel="noopener" aria-label="Open OHGS on Instagram"><svg class="button-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg><span data-en="Open Instagram" data-sw="Fungua Instagram">Open Instagram</span></a><a class="btn wa" href="https://wa.me/255689528193?text=Hello%20OHGS%2C%20please%20send%20me%20directions%20to%20your%20Uhuru%20Road%20shop" target="_blank" rel="noopener" data-en="Ask for directions" data-sw="Uliza maelekezo">Ask for directions</a></div></article></div></div></section></main><footer class="footer"><div class="wrap footer-grid">
+  <div><div class="footer-brand"><img src="media/ohgs-header-pro-badge.svg" alt="OHGS" decoding="async" loading="eager"><div><strong>OHGS Hardware</strong><small>Olotu Hardware &amp; General Supply LTD</small></div></div><p>Hardware tools, pumps, construction equipment and reliable site supplies in Arusha.</p></div>
+  <div><h3>Quick links</h3><a href="products.html">Products</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></div>
+  <div><h3>Contact</h3><p>Uhuru Road, Arusha<br>WhatsApp: +255 689 528 193<br><a class="instagram-link" href="https://www.instagram.com/olotuhardware/" target="_blank" rel="noopener" aria-label="Open OHGS on Instagram">Instagram: @olotuhardware</a></p><div class="footer-contact-actions"><a class="btn wa" href="https://wa.me/255689528193?text=Hello%20OHGS%20I%20want%20to%20ask%20about%20today%20price%20and%20availability" target="_blank" rel="noopener">Message OHGS</a><a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Olotu%20Hardware%20%26%20General%20Supply%20Ltd%2C%20Uhuru%20Road%2C%20Arusha%2C%20Tanzania" target="_blank" rel="noopener">Get directions</a></div></div>
+</div><div class="wrap footer-bottom">© 2026 OHGS Hardware. Website by Isaac Sabuni.</div></footer>
+<script src="ohgs-email-notifications.js?v=v41-visible-video-autoplay" defer=""></script><script src="ohgs-pro-stable-launch.js?v=stable-launch-v41-visible-video-autoplay" defer=""></script><script src="ohgs-mobile-media.js?v=v41-visible-video-autoplay" defer=""></script><script src="ohgs-loading.js?v=v41-visible-video-autoplay" defer=""></script><nav class="mobile-order-dock" aria-label="Quick order actions">
+  <a class="mobile-order-call" href="tel:+255689528193"><span data-en="Call" data-sw="Piga simu">Call</span></a>
+  <a class="mobile-order-whatsapp" href="https://wa.me/255689528193?text=Hello%20OHGS%2C%20I%20want%20to%20ask%20about%20a%20product" target="_blank" rel="noopener" data-product="Mobile order"><span data-en="WhatsApp order" data-sw="Agiza WhatsApp">WhatsApp order</span></a>
+</nav></body></html>

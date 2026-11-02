@@ -1,0 +1,21 @@
+OHGS v41 — PUT THIS UPDATE ON THE WEBSITE CUSTOMERS SEE
+
+The published www.ohgs.co.tz page was checked on 2 November 2026. It reported v31-final-light-mode-contrast. The separately inspected OhgsHardwareArusha repository reported v26. This ZIP contains v41-visible-video-autoplay.
+
+1. In Vercel, open the project whose Domains section contains your live website address.
+2. Open that project's Settings > Git and follow its connected GitHub repository link.
+3. Extract OHGS_GITHUB_UPLOAD_READY.zip.
+4. With GitHub Desktop, clone the connected repository and copy ALL extracted files into its folder. Commit and Push. Include media and every media/responsive file. Keep index.html and package.json at the repository root.
+   With GitHub's website, use batches of no more than 100 files and preserve the same folder paths.
+5. In Vercel, use Framework Preset Other, Root Directory ./, Build Command npm run build, Output Directory dist.
+6. Wait for a successful production deployment. If using Redeploy, turn off Use existing Build Cache for this update.
+7. On your live domain, open /version-check.txt. It must contain v41-visible-video-autoplay.
+8. Open /deploy-test and press Check deployed files. The Page, Video controller and Version file values should all show v41-visible-video-autoplay.
+9. Open Home. The visible showroom preview should start muted and loop. Tap Sound on for audio. Scroll to another video: it should start muted automatically after the first leaves the screen. Manually paused videos stay paused. Data Saver, reduced-motion preferences or browser restrictions may require Play.
+
+If an older version is still shown, use the project/repository attached to the live domain and verify its production branch. A successful deployment to another project does not change the website on your domain.
+
+For a new GitHub repository and Vercel project, follow DEPLOY_TO_NEW_VERCEL.txt. Keep your current production project until the replacement is tested and the domain has been moved.
+
+PREVIEW BEFORE UPLOADING
+Open a terminal in the extracted website folder. Run npm ci, then npm run dev. Open the Local URL printed in the terminal. Keep that terminal open while reviewing the website.
